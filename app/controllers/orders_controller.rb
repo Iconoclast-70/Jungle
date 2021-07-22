@@ -1,7 +1,26 @@
+require 'pp'
+
 class OrdersController < ApplicationController
+  
 
   def show
+
+    # @Order = 
+    # <Order id: 5, 
+    # total_cents: 553575, 
+    # created_at: "2021-07-21 23:56:00", 
+    # updated_at: "2021-07-21 23:56:00", 
+    # strispe_charge_id: "ch_1JFpGdFsXliwGi5nv945CBzy", 
+    # email: "kvirani@gmail.com">
+
+    # params =
+    # {"controller"=>"orders", "action"=>"show", "id"=>"6"}
+  
     @order = Order.find(params[:id])
+    
+    # pp @order.line_items.first.product
+    # implicitly renders show.html.erb from the orders directory
+    
   end
 
   def create
