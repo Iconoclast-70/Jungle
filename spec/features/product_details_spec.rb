@@ -23,11 +23,7 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
     visit root_path
     
     click_link @category.products[0].name
-
-    # DEBUG
-    save_screenshot
-    puts page.html
-
+  
     # VERIFY
     expect(page).to have_css 'div.col-sm-8'
   end
